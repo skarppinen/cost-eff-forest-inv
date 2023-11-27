@@ -20,7 +20,7 @@ let
         default = 29032023
 
         "--dataid"
-        help = "Stand dataset to use, 2, 3 or 4 (checked)"
+        help = "Stand dataset to use, must be 4 (checked)"
         arg_type = Int
         required = true
 
@@ -113,7 +113,7 @@ let
         required = true
 
         "--dataid"
-        help = "dataset to use, 2, 3 or 4 (checked)"
+        help = "dataset to use, must be 4 (checked)"
         arg_type = Int
         required = true
         
@@ -146,7 +146,7 @@ let
         required = true
 
         "--model"
-        help = "Integer specifying the model to use. must be 1 (normal) or 2 (lognormal) or 3. checked"
+        help = "Integer specifying the model to use. must be 1 (normal) or 2 (lognormal). checked"
         arg_type = Int
         required = true
 
@@ -217,7 +217,7 @@ let
         required = true
 
         "--dataid"
-        help = "index of stand data to use, must be 2, 3 or 4 (checked)"
+        help = "index of stand data to use, must be 4 (checked)"
         arg_type = Int
         required = true 
 

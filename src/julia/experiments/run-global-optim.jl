@@ -12,7 +12,7 @@ verbose = args["verbose"];
 outfolder = args["outfolder"];
 verbose && println("Got arguments: $args");
 @assert xI_choice in (1, 2, 3)
-@assert dataid in (1, 2, 3, 4)
+@assert dataid == 4
 @assert timelimit > 0.0
 
 using JLD2

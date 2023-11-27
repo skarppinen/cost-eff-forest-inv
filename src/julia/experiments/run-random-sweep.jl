@@ -31,7 +31,7 @@ function run_random_sweep_true_data(dataid::Integer, algrng::AbstractRNG, datarn
 	@assert xI_choice in (1, 2, 3)
 	@assert max_sweeps > 0
 	@assert inits > 0
-    @assert dataid in (2, 3, 4)
+    @assert dataid == 4
     
     stda = StandData(id = dataid);
     (nS, nT, nA, nI) = size(stda);

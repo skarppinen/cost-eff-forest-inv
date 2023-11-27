@@ -25,7 +25,7 @@ outfolder = args["outfolder"];
 @assert maxsweeps > 0
 @assert nruns > 0
 @assert strategy in (:smallest_negative, :greatest_negative)
-@assert dataid in (2, 3, 4) "invalid `datasetid` = $dataid";
+@assert dataid == 4 "invalid `datasetid` = $dataid";
 @assert xI_choice in (1, 2, 3) "invalid `xI_choice` = $xI"; 
 
 using Random
