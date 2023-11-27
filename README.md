@@ -12,7 +12,7 @@ This section is will be added shortly.
 
 - `/data/test-data-4.jld2`: the dataset in the paper containing the 100 Swedish tracts.
 
-`/data/planning-problem-data.jld2`: the contents of `test-data-4.jld2` + the list of inventory decisions whose PoV value needs to be computed to solve the planning problem as discussed in the paper. 
+- `/data/planning-problem-data.jld2`: the contents of `test-data-4.jld2` + the list of inventory decisions whose PoV value needs to be computed to solve the planning problem as discussed in the paper. 
 
 - `/no-vc/output` contains the numerical results of all experiments in the paper as raw (JLD2, Julia's data format) datafiles. Look at the code producing the figures (see below) to figure out which experiment corresponds with what.
 
