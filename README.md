@@ -1,12 +1,17 @@
 # Source code and materials accompanying the paper "Planning cost-effective operational forest inventories" (2023)
 
 The repository contains all source code and files used to draw the conclusions of the paper.
-This repository is under construction and will still update.
-Further documentation will be added shortly.
+This repository is under construction and further documentation will still be added. 
 
 ## Dependencies
 
-This section is will be added shortly.
+- Julia: coming soon
+- R (code written using version 4.3.2)
+- R packages: ggplot2, latex2exp, dplyr, tidyr, here
+
+## Quick start 
+
+This section will be updated soon.
 
 ## Description of files
 
@@ -34,4 +39,13 @@ This section is will be added shortly.
 
 ## Compiling the C code
 
-This section will be added shortly.
+Running the Makefile `/src/c/random-sweep/Makefile` with `make` compiles a shared library `libpov.so` that contains the implementation of the random sweep algorithm from the paper and a function to evaluate the posterior value of inventory decision (see `pov.c` and `/src/julia/lib/pov.jl` for example of calling from Julia). By default, the GNU C compiler `gcc` is used for compilation. 
+After compiling the library, move the shared library to a folder that the operating system searches when resolving shared libraries (or modify system settings such that it is found).
+
+The C code has two dependencies:
+
+- [The GNU Scientific library](https://www.gnu.org/software/gsl/) (for random number generation)
+- [OpenBLAS](https://www.openblas.net/) (or some other BLAS implementation) (for linear algebra)
+
+These dependencies have to be installed and discoverable by the operating system for compilation to succeed. 
+The Makefile uses the flags `-lgsl` and `-lopenblas` to link to these libraries.
