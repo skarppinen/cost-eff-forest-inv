@@ -1,17 +1,23 @@
 # Source code and materials accompanying the paper "Planning cost-effective operational forest inventories" (2023)
 
-The repository contains all source code and files used to draw the conclusions of the paper.
-This repository is under construction and further documentation will still be added. 
-
-## Dependencies
-
-- Julia: coming soon
-- R (code written using version 4.3.2)
-- R packages: ggplot2, latex2exp, dplyr, tidyr, here
+This repository contains all source code and files used to draw the conclusions of the paper 
+"Planning cost-effective operational forest inventories" (2023) by Santeri Karppinen, Lovisa Engberg-Sundström,
+Liviu Ene and Juha Karvanen.
 
 ## Quick start 
 
-This section will be updated soon.
+1. Clone this repository:
+```
+git clone https://github.com/skarppinen/cost-eff-forest-inv.git
+```
+
+2. Install the [R programming language](https://www.r-project.org/) (code written using version 4.3.2)
+
+- Install required R packages by executing `Rscript install-r-packages.jl` in the root folder.
+
+3. Install the [Julia programming language](https://julialang.org/) (code written using version 1.8.5) 
+
+- Install required Julia packages by executing `julia install-julia-packages.jl` in the root folder.
 
 ## Description of files
 
@@ -27,7 +33,7 @@ This section will be updated soon.
 
 - `/src/julia/experiments`: Folder containing the source code for launching the experiments of the paper. Each "experiment script" begins with "run-" and has a separate help menu (execute `julia run-*experiment* --help` on the command line) which lists the available arguments. 
 
-- `/src/julia/lib`: Julia code for calling the C code, reading data, handling jobs, etc. A limited implementation of the random sweep algorithm can be found here as well.
+- `/src/julia/lib`: Julia code for calling the C code, reading data, handling jobs, etc. A limited implementation of the random sweep algorithm can be found here as well. Note that the Julia code calling C requires that the associated C code has been compiled to a shared library that Julia can find. (see separate instructions for compiling below)
 
 - `/src/julia/scripts/gen-planning-problem-data.jl` generates `/data/planning-problem-data.jld2` from `/data/test-data-4.jld2`.
 
@@ -44,8 +50,12 @@ After compiling the library, move the shared library to a folder that the operat
 
 The C code has two dependencies:
 
-- [The GNU Scientific library](https://www.gnu.org/software/gsl/) (for random number generation)
-- [OpenBLAS](https://www.openblas.net/) (or some other BLAS implementation) (for linear algebra)
+1. [The GNU Scientific library](https://www.gnu.org/software/gsl/) (for random number generation)
+2. [OpenBLAS](https://www.openblas.net/) (or some other BLAS implementation) (for linear algebra)
 
 These dependencies have to be installed and discoverable by the operating system for compilation to succeed. 
 The Makefile uses the flags `-lgsl` and `-lopenblas` to link to these libraries.
+
+## Contact
+
+Santeri Karppinen (skarppinen 'at' iki 'dot' fi)
