@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/719704865.svg)](https://doi.org/10.5281/zenodo.17288666)
+
 # Source code and materials accompanying the paper "Planning cost-effective operational forest inventories" (2024)
 
 This repository contains all source code and files used to draw the conclusions of the paper 
